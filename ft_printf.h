@@ -6,15 +6,15 @@
 /*   By: cbaroi <cbaroi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/26 18:11:15 by cbaroi            #+#    #+#             */
-/*   Updated: 2023/11/29 13:51:59 by cbaroi           ###   ########.fr       */
+/*   Updated: 2023/11/29 14:41:48 by cbaroi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
 
-#include <stdlib.h>
-#include <stdarg.h>
+# include <stdlib.h>
+# include <stdarg.h>
 
 int	pf_putchar(const char *str);
 int	pf_putstr(const char *str);
