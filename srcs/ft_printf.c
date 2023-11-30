@@ -6,7 +6,7 @@
 /*   By: cbaroi <cbaroi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 19:03:44 by cbaroi            #+#    #+#             */
-/*   Updated: 2023/11/29 14:28:51 by cbaroi           ###   ########.fr       */
+/*   Updated: 2023/11/30 16:52:21 by cbaroi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,15 +30,4 @@ int	ft_printf(const char *str, ...)
 	}
 	va_end(args);
 	return (count);
-}
-
-int	main(void)
-{
-	int	count;
-
-	count = ft_printf("Hello World!");
-	printf("\n%d\n", count);
-	count = printf("Hello World!");
-	printf("\n%d\n", count);
-	return (0);
 }

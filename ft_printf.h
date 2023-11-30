@@ -6,7 +6,7 @@
 /*   By: cbaroi <cbaroi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/26 18:11:15 by cbaroi            #+#    #+#             */
-/*   Updated: 2023/11/29 14:41:48 by cbaroi           ###   ########.fr       */
+/*   Updated: 2023/11/30 16:51:06 by cbaroi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,9 @@
 
 # include <stdlib.h>
 # include <stdarg.h>
+# include <stdio.h>
 
-int	pf_putchar(const char *str);
+int	pf_putchar(int c);
 int	pf_putstr(const char *str);
 int	cnvt_small(unsigned long number, short base);
 int	cnvt_big(unsigned long number, short base);
