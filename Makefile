@@ -5,31 +5,31 @@
 #                                                     +:+ +:+         +:+      #
 #    By: cbaroi <cbaroi@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/11/29 14:30:32 by cbaroi            #+#    #+#              #
-#    Updated: 2023/11/29 14:48:53 by cbaroi           ###   ########.fr        #
+#    Created: 2023/12/01 12:41:07 by cbaroi            #+#    #+#              #
+#    Updated: 2023/12/01 12:43:19 by cbaroi           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libftprintf.a
-SRCS = srcs/cnvt_big.c srcs/cnvt_small.c srcs/ft_printf.c srcs/pf_addr.c srcs/pf_flags.c srcs/pf_putchar.c srcs/pf_putnbr.c srcs/pf_putstr.c
-OBJS = ${SRCS: .c=.o}
+MANDATORY_SRCS = ft_printf.c pf_cnvts.c pf_addr.c pf_putchar.c pf_putstr.c pf_cnvtb.c pf_putnbr.c pf_flags.c
+MANDATORY_OBJS = ${MANDATORY_SRCS:.c=.o}
 HEADER = ft_printf.h
 
 all: ${NAME}
 
-${NAME}: ${OBJS}
-		ar rc ${NAME} ${OBJS}
-		ranlib ${NAME}
+${NAME}: ${MANDATORY_OBJS}
+	ar rc ${NAME} ${MANDATORY_OBJS}
+	ranlib ${NAME}
 
 %.o: %.c ${HEADER}
-		cc -Wall -Wextra -Werror -c $< -o $@
+	cc -Wall -Wextra -Werror -c $< -o $@
 
 clean:
-		rm -f ${OBJS}
+	rm -f ${MANDATORY_OBJS}
 
 fclean: clean
-		rm -f ${NAME}
+	rm -f ${NAME}
 
 re: fclean all
 
-.PHONY: all clean fclean re bonus
+.PHONY: all clean fclean re
