@@ -11,6 +11,7 @@ void	pf_putchar(char c, size_t *count);
 void	pf_putstr(char *str, size_t *count);
 void	pf_addr(void *ptr, size_t *count);
 void	pf_cnvt(unsigned long n, int base, char c, size_t *count);
+void	pf_putnbr(int nbr, size_t *count);
 
 void	pf_putchar(char c, size_t *count)
 {
