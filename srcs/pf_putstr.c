@@ -5,19 +5,25 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: cbaroi <cbaroi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/29 14:21:36 by cbaroi            #+#    #+#             */
-/*   Updated: 2023/11/29 14:28:31 by cbaroi           ###   ########.fr       */
+/*   Created: 2023/12/02 23:58:03 by cbaroi            #+#    #+#             */
+/*   Updated: 2023/12/03 00:01:16 by cbaroi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-int	pf_putstr(const char *str)
+void	pf_putstr(char *str, size_t *count)
 {
-	int	count;
+	int	i;
 
-	count = 0;
-	while (*str)
-		count += pf_putchar(str++);
-	return (count);
+	i = -1;
+	if (!str)
+		*count = write(1, "(nill)", 6);
+	else
+	{
+		while (str[++i])
+		{
+			pf_putchar(str[i], count);
+		}
+	}
 }

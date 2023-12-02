@@ -5,35 +5,27 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: cbaroi <cbaroi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/29 14:26:36 by cbaroi            #+#    #+#             */
-/*   Updated: 2023/11/29 14:28:10 by cbaroi           ###   ########.fr       */
+/*   Created: 2023/12/02 23:59:47 by cbaroi            #+#    #+#             */
+/*   Updated: 2023/12/03 00:02:23 by cbaroi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-int	pf_flags(va_list args, char *str)
+void	pf_flags(va_list args, char *str, size_t *count)
 {
-	int	count;
-
 	if (*str == 'c')
-		count = pf_putchar(va_arg(args, int));
+		pf_putchar(va_arg(args, int), count);
 	else if (*str == 's')
-		count = pf_putstr(va_arg(args, char *));
+		pf_putstr(va_arg(args, char *), count);
 	else if (*str == 'p')
-		count = pf_addr(va_arg(args, void *));
+		pf_addr(va_arg(args, void *), count);
 	else if (*str == 'i' || *str == 'd')
-		count = pf_putnbr(va_arg(args, int));
+		pf_putnbr(va_arg(args, int), count);
 	else if (*str == 'u')
-		count = cnvt_small(va_arg(args, unsigned int), 10);
-	else if (*str == 'x' || *str == 'X')
-	{
-		if (*str == 'x')
-			count = cnvt_small(va_arg(args, unsigned int), 16);
-		else
-			count = cnvt_big(va_arg(args, unsigned int), 16);
-	}
-	else if (*str == '%')
-		count = pf_putchar('%');
-	return (count);
+		pf_cnvt(va_arg(args, unsigned int), 10, 'x', count);
+	else if (*str == 'x')
+		pf_cnvt(va_arg(args, unsigned int), 16, 'x', count);
+	else if (*str == 'X')
+		pf_cnvt(va_arg(args, unsigned int), 16, 'X', count);
 }

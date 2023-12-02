@@ -1,6 +1,18 @@
-# include <stdarg.h>
-# include <unistd.h>
-# include <stdlib.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: cbaroi <cbaroi@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/12/03 00:03:34 by cbaroi            #+#    #+#             */
+/*   Updated: 2023/12/03 00:05:14 by cbaroi           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include <stdarg.h>
+#include <unistd.h>
+#include <stdlib.h>
 
 //For testing purpose
 #include <stdio.h>
@@ -116,10 +128,10 @@ int	ft_printf(char const *str, ...)
 	while (*str)
 	{
 		if (*str == '%')
-			{
-				pf_flags(args, (char *)(++str), &count);
-				str++;
-			}
+		{
+			pf_flags(args, (char *)(++str), &count);
+			str++;
+		}
 		else
 			pf_putchar(*(str++), &count);
 	}

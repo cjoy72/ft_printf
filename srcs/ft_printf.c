@@ -5,17 +5,17 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: cbaroi <cbaroi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/27 19:03:44 by cbaroi            #+#    #+#             */
-/*   Updated: 2023/11/30 16:52:21 by cbaroi           ###   ########.fr       */
+/*   Created: 2023/12/03 00:00:07 by cbaroi            #+#    #+#             */
+/*   Updated: 2023/12/03 00:01:47 by cbaroi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-int	ft_printf(const char *str, ...)
+int	ft_printf(char const *str, ...)
 {
 	va_list	args;
-	int		count;
+	size_t	count;
 
 	count = 0;
 	if (!str)
@@ -24,9 +24,12 @@ int	ft_printf(const char *str, ...)
 	while (*str)
 	{
 		if (*str == '%')
-			count += pf_flags(args, (char *)(++str));
+		{
+			pf_flags(args, (char *)(++str), &count);
+			str++;
+		}
 		else
-			count += pf_putchar(str++);
+			pf_putchar(*(str++), &count);
 	}
 	va_end(args);
 	return (count);

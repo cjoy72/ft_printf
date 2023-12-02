@@ -6,12 +6,12 @@
 #    By: cbaroi <cbaroi@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/01 12:41:07 by cbaroi            #+#    #+#              #
-#    Updated: 2023/12/01 12:43:19 by cbaroi           ###   ########.fr        #
+#    Updated: 2023/12/03 00:11:09 by cbaroi           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libftprintf.a
-MANDATORY_SRCS = ft_printf.c pf_cnvts.c pf_addr.c pf_putchar.c pf_putstr.c pf_cnvtb.c pf_putnbr.c pf_flags.c
+MANDATORY_SRCS = srcs/ft_printf.c srcs/pf_addr.c srcs/pf_cnvt.c srcs/pf_flags.c srcs/pf_putchar.c srcs/pf_putnbr.c srcs/pf_putstr.c
 MANDATORY_OBJS = ${MANDATORY_SRCS:.c=.o}
 HEADER = ft_printf.h
 

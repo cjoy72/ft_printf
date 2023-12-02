@@ -5,14 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: cbaroi <cbaroi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/29 14:21:05 by cbaroi            #+#    #+#             */
-/*   Updated: 2023/11/30 16:47:47 by cbaroi           ###   ########.fr       */
+/*   Created: 2023/12/02 23:56:29 by cbaroi            #+#    #+#             */
+/*   Updated: 2023/12/02 23:57:10 by cbaroi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-int	pf_putchar(int c)
+void	pf_putchar(char c, size_t *count)
 {
-	return (write(1, &c, 1));
+	(*count) += write(1, &c, 1);
 }
