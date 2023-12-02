@@ -19,10 +19,9 @@ all: ${NAME}
 
 ${NAME}: ${MANDATORY_OBJS}
 	ar rc ${NAME} ${MANDATORY_OBJS}
-	ranlib ${NAME}
 
 %.o: %.c ${HEADER}
-	cc -Wall -Wextra -Werror -c $< -o $@
+	cc -Wall -Wextra -Werror -c $?
 
 clean:
 	rm -f ${MANDATORY_OBJS}
