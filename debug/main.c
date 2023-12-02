@@ -145,9 +145,9 @@ int	main()
 	int		conta;
 
 	min = -2147483648;
-	conta = ft_printf("Hello World! %d", min);
+	conta = ft_printf("Hello World! %s", NULL);
 	ft_printf("\nNumbers of Characters Written: %d\n", conta);
-	conta = printf("Hello World! %d", min);
+	conta = printf("Hello World! %s", NULL);
 	printf("\nNumbers of Characters Written: %d\n", conta);
 	return (0);
 }
