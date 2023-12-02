@@ -6,7 +6,7 @@
 /*   By: cbaroi <cbaroi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/03 00:03:34 by cbaroi            #+#    #+#             */
-/*   Updated: 2023/12/03 00:05:14 by cbaroi           ###   ########.fr       */
+/*   Updated: 2023/12/03 00:44:35 by cbaroi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void	pf_putstr(char *str, size_t *count)
 
 	i = -1;
 	if (!str)
-		*count = write(1, "(nill)", 6);
+		*count = write(1, "(null)", 6);
 	else
 	{
 		while (str[++i])
@@ -141,13 +141,11 @@ int	ft_printf(char const *str, ...)
 
 int	main()
 {
-	int	min;
 	int		conta;
 
-	min = -2147483648;
-	conta = ft_printf("Hello World! %s", NULL);
+	conta = ft_printf(" NULL %s NULL ", NULL);
 	ft_printf("\nNumbers of Characters Written: %d\n", conta);
-	conta = printf("Hello World! %s", NULL);
+	conta = printf(" NULL %s NULL ", NULL);
 	printf("\nNumbers of Characters Written: %d\n", conta);
 	return (0);
 }
