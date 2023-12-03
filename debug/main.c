@@ -36,7 +36,7 @@ void	pf_putstr(char *str, size_t *count)
 
 	i = -1;
 	if (!str)
-		*count = write(1, "(null)", 6);
+		pf_putstr("(null)", count);
 	else
 	{
 		while (str[++i])
